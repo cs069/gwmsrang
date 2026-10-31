@@ -1,0 +1,516 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gwmsrang Muchahary</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one calm column. A tender-notice card sits beside the headline, then the page follows the structure of a bid (scope of work, past performance, eligibility, qualifications, contact). */
+:root {
+  --bg: #F2F6F4;
+  --surface: #FFFFFF;
+  --ink: #12201B;
+  --muted: #4B5E57;
+  --line: #D3DDD8;
+  --accent: #0B6B52;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DCEFE7;
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C1411; --surface: #131E1A; --ink: #E7F0EC; --muted: #9DB3AA;
+    --line: #25362F; --accent: #5ED3A8; --accent-ink: #06130E; --accent-soft: #17352B;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C1411; --surface: #131E1A; --ink: #E7F0EC; --muted: #9DB3AA;
+  --line: #25362F; --accent: #5ED3A8; --accent-ink: #06130E; --accent-soft: #17352B;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6.5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 3rem;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 30; background: var(--bg);
+}
+.wrap { max-width: 70rem; margin: 0 auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3, h4, p, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+
+/* Header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: .4rem 1rem; padding-block: .7rem;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.progress {
+  position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%;
+  background: var(--accent); transform-origin: 0 50%; transform: scaleX(var(--p, 0));
+}
+.brand { display: flex; align-items: center; gap: .65rem; font: 700 1rem/1 var(--font-display); text-decoration: none; color: var(--ink); }
+.logo {
+  display: grid; place-items: center; width: 2.1rem; height: 2.1rem; border-radius: 8px;
+  background: var(--accent); color: var(--accent-ink); font-size: .9rem; letter-spacing: .02em;
+}
+.nav { order: 3; width: 100%; display: flex; gap: .15rem; overflow-x: auto; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  font: 500 .74rem/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; padding: .55rem .6rem; white-space: nowrap; border-radius: 6px;
+}
+.nav a:hover { color: var(--ink); background: var(--accent-soft); }
+.tbtn {
+  font: 500 .74rem/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 999px; padding: .5rem .85rem; cursor: pointer;
+}
+.tbtn:hover { border-color: var(--accent); }
+@media (min-width: 780px) { .nav { order: 0; width: auto; } }
+
+/* Hero */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 2.5rem; align-items: end;
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem);
+}
+@media (max-width: 860px) { .hero { grid-template-columns: minmax(0, 1fr); } }
+.eyebrow { font: 500 .75rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+h1 {
+  font: 700 clamp(2.7rem, 9vw, 5.4rem)/.98 var(--font-display); letter-spacing: -.035em;
+  margin: 1rem 0 1.2rem; text-wrap: balance;
+}
+h1 span { display: block; }
+.sweep {
+  height: 6px; width: min(15rem, 62%); background: var(--accent); margin-bottom: 1.6rem;
+  transform-origin: left; animation: sweep 1.1s .5s cubic-bezier(.2, .8, .2, 1) both;
+}
+.lede { max-width: 36rem; color: var(--muted); font-size: 1.15rem; line-height: 1.6; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+.btn {
+  display: inline-block; font: 500 .95rem/1 var(--font-body); text-decoration: none;
+  padding: .85rem 1.3rem; border-radius: 10px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-ink); transition: transform .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.alt { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.alt:hover { border-color: var(--accent); }
+
+.notice { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.4rem 1.4rem; }
+.notice-h {
+  display: flex; justify-content: space-between; gap: .5rem; flex-wrap: wrap;
+  font: 500 .7rem/1.3 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+  padding-bottom: .85rem; margin-bottom: .4rem; border-bottom: 1px dashed var(--line);
+}
+.notice dl { display: grid; }
+.notice .r { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); gap: .75rem; padding-block: .6rem; border-bottom: 1px solid var(--line); }
+.notice .r:last-child { border-bottom: 0; padding-bottom: 0; }
+.notice dt { font: 500 .7rem/1.7 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.notice dd { font-size: .95rem; line-height: 1.5; overflow-wrap: anywhere; }
+
+/* Stats */
+.stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1.5rem 2rem;
+  padding-block: 1.8rem; border-block: 1px solid var(--line);
+}
+.stat b { display: block; font: 700 clamp(2rem, 5vw, 2.7rem)/1 var(--font-display); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: .45rem; font-size: .9rem; color: var(--muted); line-height: 1.4; }
+
+/* Sections */
+.sec { padding-block: clamp(2.8rem, 6vw, 4.8rem) 0; }
+.sec-head { display: grid; gap: .7rem; margin-bottom: 2rem; max-width: 44rem; }
+h2 { font: 600 clamp(1.8rem, 4.6vw, 2.7rem)/1.1 var(--font-display); letter-spacing: -.02em; text-wrap: balance; }
+.sec-head p { color: var(--muted); }
+
+/* Steps */
+.steps { position: relative; display: grid; }
+.steps::before, .steps::after {
+  content: ""; position: absolute; left: calc(1.15rem - 1px); top: 1.4rem; bottom: 1.4rem; width: 2px;
+}
+.steps::before { background: var(--line); }
+.steps::after { background: var(--accent); transform-origin: top; transform: scaleY(var(--lp, 0)); }
+.step { display: grid; grid-template-columns: 2.3rem minmax(0, 1fr); gap: 1.25rem; padding-block: 1.05rem; }
+.n {
+  position: relative; z-index: 1; display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%;
+  font: 500 .8rem/1 var(--font-mono); background: var(--bg); border: 2px solid var(--line); color: var(--muted);
+  transition: background .4s ease, border-color .4s ease, color .4s ease;
+}
+.step.in .n { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.step h3 { font: 600 1.2rem/1.3 var(--font-display); margin-bottom: .25rem; }
+.step p { color: var(--muted); max-width: 40rem; }
+
+.twoup { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 1.25rem; margin-top: 2.2rem; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem; min-width: 0; }
+.label { font: 500 .72rem/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; display: block; }
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { border: 1px solid var(--line); background: var(--bg); padding: .3rem .75rem; border-radius: 999px; font-size: .88rem; }
+.box p { color: var(--muted); }
+
+/* Experience */
+.role { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.role-h { padding: 1.5rem 1.5rem 1.4rem; display: grid; gap: .6rem; }
+.role-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .4rem 1rem; }
+.role h3 { font: 600 clamp(1.3rem, 3.4vw, 1.7rem)/1.2 var(--font-display); }
+.when { font: 500 .78rem/1.4 var(--font-mono); letter-spacing: .06em; color: var(--accent); text-transform: uppercase; }
+.co { color: var(--muted); }
+.role-h .sum { max-width: 46rem; margin-top: .4rem; }
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); border-top: 1px solid var(--line); }
+.proj { padding: 1.5rem; min-width: 0; display: grid; gap: .75rem; align-content: start; }
+.proj + .proj { border-left: 1px solid var(--line); }
+@media (max-width: 760px) { .proj + .proj { border-left: 0; border-top: 1px solid var(--line); } }
+.proj h4 { font: 600 1.15rem/1.3 var(--font-display); }
+.meta { font: 400 .76rem/1.5 var(--font-mono); color: var(--muted); letter-spacing: .02em; }
+.proj ul { display: grid; gap: .55rem; }
+.proj li { position: relative; padding-left: 1.2rem; color: var(--muted); font-size: .96rem; }
+.proj li::before { content: ""; position: absolute; left: 0; top: .7em; width: .5rem; height: 2px; background: var(--accent); }
+.proj p { color: var(--muted); font-size: .96rem; }
+
+/* Eligibility */
+.elig { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow: hidden; }
+.erow {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr) 5.5rem; gap: .35rem 1.5rem;
+  align-items: center; padding: 1rem 1.4rem; border-top: 1px solid var(--line);
+}
+.erow.head { border-top: 0; background: var(--accent-soft); font: 500 .7rem/1.3 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-block: .75rem; }
+.erow b { font-weight: 500; }
+.erow span { color: var(--muted); font-size: .95rem; }
+.pill {
+  justify-self: start; font: 500 .7rem/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase;
+  background: var(--accent-soft); color: var(--accent); padding: .38rem .65rem; border-radius: 999px; white-space: nowrap;
+}
+.pill::before { content: "\2713\00a0"; }
+@media (max-width: 720px) {
+  .erow { grid-template-columns: minmax(0, 1fr); padding: 1rem 1.1rem; gap: .35rem; }
+  .erow.head { display: none; }
+  .pill { margin-top: .3rem; }
+}
+
+/* Qualifications */
+.split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 3rem; }
+@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } }
+.qual { display: grid; }
+.q { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 1rem; padding-block: 1.1rem; border-top: 1px solid var(--line); }
+.q:last-child { border-bottom: 1px solid var(--line); }
+.yr { font: 500 .85rem/1.6 var(--font-mono); color: var(--accent); font-variant-numeric: tabular-nums; }
+.q h3 { font: 600 1.08rem/1.35 var(--font-display); }
+.q p { color: var(--muted); font-size: .94rem; margin-top: .15rem; }
+.side { display: grid; gap: 2rem; align-content: start; }
+.side h3 { font: 500 .72rem/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; }
+
+/* Contact */
+.contact { max-width: 44rem; }
+.crow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1rem; padding-block: 1.1rem; border-top: 1px solid var(--line); }
+.crow:last-of-type { border-bottom: 1px solid var(--line); }
+.cl { font: 500 .72rem/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); width: 100%; }
+.cval { font: 600 clamp(1.15rem, 3.6vw, 1.6rem)/1.3 var(--font-display); overflow-wrap: anywhere; min-width: 0; }
+.copy { font: 500 .74rem/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 8px; padding: .6rem .85rem; cursor: pointer; }
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+.foot { margin-top: 3.5rem; font: 400 .74rem/1.6 var(--font-mono); color: var(--muted); letter-spacing: .04em; }
+
+/* Motion */
+.rise { animation: rise .85s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 90ms); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes sweep { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.js .rv { transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+.js .rv:not(.in) { opacity: .3; transform: translateY(16px); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .rv:not(.in) { opacity: 1; transform: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" aria-label="Gwmsrang Muchahary, back to top"><span class="logo">GM</span>Gwmsrang Muchahary</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#scope">Scope</a>
+      <a href="#experience">Experience</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#qualifications">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="tbtn" id="theme" type="button" aria-label="Switch between light and dark theme">Theme</button>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="eyebrow rise" style="--i:0">Procurement · Tenders · IT projects</p>
+        <h1 class="rise" style="--i:1"><span>Gwmsrang</span><span>Muchahary</span></h1>
+        <div class="sweep" aria-hidden="true"></div>
+        <p class="lede rise" style="--i:2">I run government tendering from the first notice to the signed work order on GeM and Assam e-Procurement, and I lead the IT projects that follow.</p>
+        <div class="actions rise" style="--i:3">
+          <a class="btn" href="#experience">See my experience</a>
+          <a class="btn alt" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <aside class="notice rise" style="--i:4" aria-label="Profile summary">
+        <div class="notice-h"><span>Candidate notice</span><span>Oct 2026</span></div>
+        <dl>
+          <div class="r"><dt>Role</dt><dd>Head, Procurement, Tender Management and IT Projects</dd></div>
+          <div class="r"><dt>Employer</dt><dd>Digitaloma Private Limited</dd></div>
+          <div class="r"><dt>Portals</dt><dd>GeM · Assam e-Procurement (online and offline)</dd></div>
+          <div class="r"><dt>Base</dt><dd>Kokrajhar, Assam</dd></div>
+          <div class="r"><dt>Languages</dt><dd>English, Bodo, Assamese, Hindi</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <div class="stats rv">
+      <div class="stat"><b data-count="5" data-suffix="+">5+</b><span>Years of relevant experience</span></div>
+      <div class="stat"><b data-count="3" data-suffix="+">3+</b><span>Years on government projects</span></div>
+      <div class="stat"><b>Gold</b><span>GeM certification, advanced functionality</span></div>
+      <div class="stat"><b data-count="2">2</b><span>Portals handled: GeM and Assam e-Procurement</span></div>
+    </div>
+
+    <section class="sec" id="scope">
+      <div class="sec-head rv">
+        <p class="eyebrow">Scope of work</p>
+        <h2>The full tender lifecycle, handled in one place</h2>
+        <p>From reading the requirement to tracking delivery, each stage is covered by the same person, so nothing is lost between teams.</p>
+      </div>
+
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="step rv"><span class="n">1</span><div><h3>Market research</h3><p>Market research, price analysis and vendor comparisons to plan procurement before a bid or tender is prepared.</p></div></li>
+        <li class="step rv"><span class="n">2</span><div><h3>Specifications and BOQ</h3><p>Technical specifications, scope of work and procurement requirements, drafted and evaluated from both the buyer's and the bidder's side.</p></div></li>
+        <li class="step rv"><span class="n">3</span><div><h3>Bid preparation</h3><p>Technical and financial bids, tender documents, BOQs, compliance statements and supporting documentation, prepared, reviewed and submitted.</p></div></li>
+        <li class="step rv"><span class="n">4</span><div><h3>OEM and vendor coordination</h3><p>Quotations, authorisation letters, MAF and technical compliance documents gathered from OEMs, suppliers and vendors.</p></div></li>
+        <li class="step rv"><span class="n">5</span><div><h3>Submission and clarifications</h3><p>Bid submission, replies to clarifications and review of corrigenda, online and offline.</p></div></li>
+        <li class="step rv"><span class="n">6</span><div><h3>Post-tender and execution</h3><p>Work orders, delivery schedules and contractual deliverables supervised through to completion.</p></div></li>
+      </ol>
+
+      <div class="twoup">
+        <div class="box rv">
+          <span class="label">Portals</span>
+          <div class="chips"><span class="chip">GeM</span><span class="chip">Assam e-Procurement, online</span><span class="chip">Assam e-Procurement, offline</span></div>
+        </div>
+        <div class="box rv">
+          <span class="label">Support for other bidders</span>
+          <p>I have also helped contractors, suppliers and vendors prepare and submit their own bids on GeM.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="experience">
+      <div class="sec-head rv">
+        <p class="eyebrow">Past performance</p>
+        <h2>Experience</h2>
+      </div>
+
+      <article class="role rv">
+        <div class="role-h">
+          <div class="role-top">
+            <h3>System Administrator and Project Head</h3>
+            <span class="when">Feb 2021 – Present</span>
+          </div>
+          <p class="co">Digitaloma Private Limited, Kokrajhar, Assam</p>
+          <p class="sum">Primary responsibility for planning, managing and executing company projects. I lead IT project development and delivery, coordinate technical teams, and manage government tender participation and execution from planning through successful delivery.</p>
+        </div>
+        <div class="projects">
+          <div class="proj">
+            <span class="meta">2021 – Present · Head, Procurement, Tender Management and IT Projects</span>
+            <h4>Government e-procurement, tender management and bid preparation</h4>
+            <ul>
+              <li>End-to-end government tendering and procurement through GeM and Assam e-Procurement, offline and online.</li>
+              <li>Technical and financial bids, tender documents, BOQs and compliance statements prepared and submitted.</li>
+              <li>Specifications, scope of work and requirements drafted and evaluated for both buyer and bidder.</li>
+              <li>OEM and vendor coordination for quotations, authorisation letters, MAF and technical compliance.</li>
+              <li>Bid clarifications, corrigendum reviews and post-tender activity.</li>
+              <li>Work orders, delivery schedules and contractual deliverables supervised through execution.</li>
+            </ul>
+          </div>
+          <div class="proj">
+            <span class="meta">2023 – 2025 · Project Coordinator</span>
+            <h4>Departmental dashboards for the Bodoland Territorial Council</h4>
+            <p>Led and coordinated the development and rollout of departmental dashboards for the Bodoland Territorial Council (BTC) government. I gathered requirements with departmental officials, directed the technical development team, tracked progress, supervised implementation and testing, and delivered on time against departmental requirements.</p>
+            <div class="chips"><span class="chip">Government client</span><span class="chip">Requirements</span><span class="chip">Team coordination</span><span class="chip">Testing and delivery</span></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="sec" id="eligibility">
+      <div class="sec-head rv">
+        <p class="eyebrow">Eligibility criteria</p>
+        <h2>Certified on the portals and the rules behind them</h2>
+        <p>Each line below is backed by a certificate.</p>
+      </div>
+
+      <div class="elig rv" role="table" aria-label="Eligibility criteria">
+        <div class="erow head" role="row"><span role="columnheader">Criterion</span><span role="columnheader">Evidence</span><span role="columnheader">Status</span></div>
+        <div class="erow" role="row"><b role="cell">GeM, basic functionality</b><span role="cell">Silver certified after online assessment, 2023</span><span class="pill" role="cell">Met</span></div>
+        <div class="erow" role="row"><b role="cell">GeM, advanced functionality</b><span role="cell">Gold certified after online assessment, 2023</span><span class="pill" role="cell">Met</span></div>
+        <div class="erow" role="row"><b role="cell">GeM training sessions</b><span role="cell">Certificates of participation, 11 Aug 2023 and 1 May 2026</span><span class="pill" role="cell">Met</span></div>
+        <div class="erow" role="row"><b role="cell">Assam Public Procurement Act, 2017 and Rules, 2020</b><span role="cell">Course completed, Finance Department, Government of Assam, 19 Oct 2026</span><span class="pill" role="cell">Met</span></div>
+        <div class="erow" role="row"><b role="cell">Government project experience</b><span role="cell">3+ years</span><span class="pill" role="cell">Met</span></div>
+        <div class="erow" role="row"><b role="cell">Relevant experience, total</b><span role="cell">5+ years in procurement, tendering and IT delivery</span><span class="pill" role="cell">Met</span></div>
+        <div class="erow" role="row"><b role="cell">Cyber security awareness</b><span role="cell">15-day Ethical Hacking and Cyber Security programme, 2017</span><span class="pill" role="cell">Met</span></div>
+      </div>
+    </section>
+
+    <section class="sec" id="qualifications">
+      <div class="sec-head rv">
+        <p class="eyebrow">Qualifications</p>
+        <h2>Education and technical skills</h2>
+      </div>
+
+      <div class="split">
+        <div class="qual rv">
+          <div class="q"><span class="yr">2019</span><div><h3>B.Tech, Computer Science and Engineering</h3><p>Central Institute of Technology, Kokrajhar · Gauhati University · CGPA 6.60, Second Class</p></div></div>
+          <div class="q"><span class="yr">2019</span><div><h3>Diploma in Computer Hardware Maintenance</h3><p>NIELIT, Guwahati · Grade C</p></div></div>
+          <div class="q"><span class="yr">2015</span><div><h3>Higher Secondary, Science</h3><p>UN Academy, Kokrajhar · AHSEC · 69%, First Division</p></div></div>
+          <div class="q"><span class="yr">2015</span><div><h3>Certificate Course in PC Hardware and Networking</h3><p>NIELIT, Guwahati · 80 hours · Grade A</p></div></div>
+          <div class="q"><span class="yr">2012</span><div><h3>High School Leaving Certificate</h3><p>Basugaon HS School, Chirang · SEBA · 71.5%, First Division</p></div></div>
+        </div>
+
+        <div class="side rv">
+          <div>
+            <h3>IT and systems</h3>
+            <div class="chips">
+              <span class="chip">System administration</span><span class="chip">PC hardware</span><span class="chip">Networking</span><span class="chip">Cyber security</span>
+              <span class="chip">Linux</span><span class="chip">Windows</span><span class="chip">C</span><span class="chip">Java</span><span class="chip">C#</span><span class="chip">HTML</span><span class="chip">MySQL</span>
+            </div>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <div class="chips"><span class="chip">English</span><span class="chip">Bodo</span><span class="chip">Assamese</span><span class="chip">Hindi</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="contact">
+      <div class="contact">
+        <div class="sec-head rv">
+          <p class="eyebrow">Contact for clarification</p>
+          <h2>Talk to me about procurement, tendering or IT projects</h2>
+        </div>
+
+        <div class="crow rv"><span class="cl">Phone</span><span class="cval">+91 70021 31838</span><button class="copy" type="button" data-copy="+917002131838">Copy</button></div>
+        <div class="crow rv"><span class="cl">Email</span><span class="cval">dingkuraj@gmail.com</span><button class="copy" type="button" data-copy="dingkuraj@gmail.com">Copy</button></div>
+        <div class="crow rv"><span class="cl">Location</span><span class="cval">Kokrajhar, Assam, India</span></div>
+
+        <p class="foot">Gwmsrang Muchahary · Updated October 2026</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll reveal
+  var rv = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Count-up (final value is already in the markup)
+  function countUp(el) {
+    var end = parseInt(el.getAttribute('data-count'), 10);
+    var suf = el.getAttribute('data-suffix') || '';
+    var start = null, dur = 900;
+    function frame(t) {
+      if (start === null) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var co = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { countUp(e.target); co.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { co.observe(el); });
+  }
+
+  // Scroll progress and the line through the tender steps
+  var steps = document.querySelector('.steps');
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var max = root.scrollHeight - window.innerHeight;
+    root.style.setProperty('--p', max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+    if (steps) {
+      if (reduce) { steps.style.setProperty('--lp', 1); return; }
+      var r = steps.getBoundingClientRect();
+      var lp = (window.innerHeight * 0.65 - r.top) / r.height;
+      steps.style.setProperty('--lp', Math.min(Math.max(lp, 0), 1));
+    }
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+
+  // Theme toggle
+  var tbtn = document.getElementById('theme');
+  tbtn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  });
+
+  // Copy buttons
+  function flash(btn, msg) {
+    var old = btn.getAttribute('data-label') || btn.textContent;
+    btn.setAttribute('data-label', old);
+    btn.textContent = msg;
+    setTimeout(function () { btn.textContent = old; }, 1600);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.copy'), function (btn) {
+    btn.addEventListener('click', function () {
+      var v = btn.getAttribute('data-copy');
+      var done = function () { flash(btn, 'Copied'); };
+      var fallback = function () {
+        var node = btn.closest('.crow').querySelector('.cval');
+        var range = document.createRange();
+        range.selectNodeContents(node);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        flash(btn, 'Selected');
+      };
+      try {
+        navigator.clipboard.writeText(v).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
+
+</body></html>
